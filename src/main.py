@@ -49,6 +49,9 @@ def start_discord_bot():
     except Exception as e:
         logger.error(f"Failed to start Discord bot: {e}")
 
+@app.route("/test")
+def test_route():
+    return "Test route works!"
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
